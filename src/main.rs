@@ -72,7 +72,7 @@ fn render(frame: &mut Frame) {
     let time_texts = &local_time[11..].chars().map(|c|{
         let s: &str = &c.to_string();
         let letter = Letter::from(s);
-        Text::raw(letter.as_str())
+        Text::raw(letter.as_str()).style(Style::default().bg(Color::Black).fg(Color::Yellow))
     }).collect::<Vec<Text>>();
     for (i, text) in time_texts.iter().enumerate() {
         frame.render_widget(text, inner_layout[i]);
